@@ -7,6 +7,10 @@ def createMerkleRoot(tx_msgs):
 	merkleRoot = ""
 	# tx_msg_cp = []
 	l = len(tx_msgs)
+
+	if l == 1:
+		return hash256(tx_msgs[0]) #merkle root foir just single entry 
+
 	tx_hash = []
 	tx_hashcp = []
 	for i in range(l):
